@@ -30,7 +30,8 @@ public class Internacional implements Runnable
 		}
 			result += sum;
 	
-	System.out.println("ThreadId: " + Thread.currentThread().getId()+" calcula desde "+data[0]+" hasta "+data[1]+"\nSuma parcial: "+sum);
+	System.out.println("ThreadId: " + Thread.currentThread().getId()+", calcula desde "+data[0]+" hasta "+data[1]);
+        System.out.println("Suma parcial: "+sum);
 	}
 	
 	static public void main(String[] args) 
@@ -53,7 +54,7 @@ public class Internacional implements Runnable
 			System.exit(-1);
 		}
 
-		System.out.println("Sumatorio de los " +NUM_PRIME+ " naturales usando "+NUM_THREADS+" hilos.\n");
+		System.out.println("Sumatorio de los " +NUM_PRIME+ " naturales usando "+NUM_THREADS+" hilos.");
 
 		Thread[] threads = new Thread[NUM_THREADS];
 
@@ -80,5 +81,6 @@ public class Internacional implements Runnable
 		    }
 		}
 		System.out.println("Resultado: "+result);
+                System.out.println("Final de la ejecución del programa.");
 	}
 }
