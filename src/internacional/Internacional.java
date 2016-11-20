@@ -29,9 +29,9 @@ public class Internacional implements Runnable
 			sum+=i;
 		}
 			result += sum;
-	
-	System.out.println("ThreadId: " + Thread.currentThread().getId()+", calcula desde "+data[0]+" hasta "+data[1]);
-        System.out.println("Suma parcial: "+sum);
+                        
+	System.out.println(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("internacional/Bundle").getString("THREADID: {0}, CALCULA DESDE {1} HASTA {2}"), Thread.currentThread().getId(), data[0], data[1]));
+        System.out.println(java.util.ResourceBundle.getBundle("internacional/Bundle").getString("SUMA PARCIAL: ")+sum);
 	}
 	
 	static public void main(String[] args) 
@@ -39,8 +39,8 @@ public class Internacional implements Runnable
 
 		if(args.length != 2)
 	        {
-			System.out.println("Error en los parametros de entrada.");
-			System.out.println("Uso: java -cp '.' SumatorioThreads [Max num] [Threads]");
+			System.out.println(java.util.ResourceBundle.getBundle("internacional/Bundle").getString("ERROR EN LOS PARAMETROS DE ENTRADA."));
+			System.out.println(java.util.ResourceBundle.getBundle("internacional/Bundle").getString("USO: JAVA -CP '.' SUMATORIOTHREADS [MAX NUM] [THREADS]"));
 			System.exit(-1);
 	        }
 
@@ -50,11 +50,11 @@ public class Internacional implements Runnable
 		int NUM_WORKLOAD = NUM_PRIME / NUM_THREADS;
 
 		if(NUM_THREADS > NUM_PRIME){
-			System.out.println("El numero de threads no puede ser mayor que el de primeros.");
+			System.out.println(java.util.ResourceBundle.getBundle("internacional/Bundle").getString("EL NUMERO DE THREADS NO PUEDE SER MAYOR QUE EL DE PRIMEROS."));
 			System.exit(-1);
 		}
 
-		System.out.println("Sumatorio de los " +NUM_PRIME+ " naturales usando "+NUM_THREADS+" hilos.");
+		System.out.println(java.util.ResourceBundle.getBundle("internacional/Bundle").getString("SUMATORIO DE LOS ") +NUM_PRIME+ java.util.ResourceBundle.getBundle("internacional/Bundle").getString(" NATURALES USANDO ")+NUM_THREADS+java.util.ResourceBundle.getBundle("internacional/Bundle").getString(" HILOS."));
 
 		Thread[] threads = new Thread[NUM_THREADS];
 
@@ -80,7 +80,7 @@ public class Internacional implements Runnable
 			e.printStackTrace();
 		    }
 		}
-		System.out.println("Resultado: "+result);
-                System.out.println("Final de la ejecución del programa.");
+		System.out.println(java.util.ResourceBundle.getBundle("internacional/Bundle").getString("RESULTADO: ")+result);
+                System.out.println(java.util.ResourceBundle.getBundle("internacional/Bundle").getString("FINAL DE LA EJECUCIÓN DEL PROGRAMA."));
 	}
 }
